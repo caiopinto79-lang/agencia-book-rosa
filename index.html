@@ -264,81 +264,7 @@
             padding-left: 0.75rem;
         }
 
-        /* Estilo para Container de Pack (Pasta agrupada) */
-        .pack-container {
-            background-color: #181818;
-            border: 1px solid #333;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
-        }
-
-        .pack-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 1.2rem;
-            border-bottom: 1px solid #2a2a2a;
-            padding-bottom: 0.8rem;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .pack-title {
-            font-size: 1.4rem;
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        .pack-price {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: #4caf50;
-            background-color: rgba(76, 175, 80, 0.1);
-            padding: 0.3rem 0.8rem;
-            border-radius: 6px;
-        }
-
-        /* Grade interna de miniaturas dentro do Pack/Pasta */
-        .pack-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.2rem;
-        }
-
-        .thumb-card {
-            background-color: var(--card-bg);
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            display: flex;
-            flex-direction: column;
-            cursor: pointer;
-            transition: transform 0.2s, border-color 0.2s;
-            border: 1px solid transparent;
-        }
-
-        .thumb-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary-color);
-        }
-
-        .thumb-img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .thumb-footer {
-            padding: 0.75rem;
-            text-align: center;
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            background-color: #222;
-        }
-
-        /* Grade de Cards normais (Início) */
+        /* Grade de Cards de Packs (Miniaturas Fechadas) */
         .grid-packs {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -364,12 +290,6 @@
             width: 100%;
             height: 220px;
             object-fit: cover;
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-
-        .card-img:hover {
-            opacity: 0.9;
         }
 
         .card-content {
@@ -392,6 +312,13 @@
             flex: 1;
         }
 
+        .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #4caf50;
+        }
+
         .btn {
             display: block;
             width: 100%;
@@ -410,6 +337,14 @@
 
         .btn:hover {
             background-color: var(--secondary-color);
+        }
+
+        .btn-mercado-pago {
+            background-color: #009ee3;
+        }
+
+        .btn-mercado-pago:hover {
+            background-color: #0073a8;
         }
 
         /* Barra de Paginação Numérica */
@@ -532,15 +467,15 @@
             <h3 class="section-title" style="font-size: 1.4rem; margin-top: 2rem;">Minicapas das Principais Criadoras</h3>
             <div class="grid-packs" style="margin-bottom: 2rem;">
                 <div class="card">
-                    <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Ane Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
+                    <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Ane Freitas" class="card-img">
                     <div class="card-content">
                         <h3>Ane Freitas</h3>
-                        <p>Acesse o perfil e confira os conteúdos exclusivos.</p>
+                        <p>Acesse o perfil e confira os packs exclusivos.</p>
                         <button class="btn" onclick="mudarPagina('ane')">Ver Pasta</button>
                     </div>
                 </div>
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Thamy Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Thamy Freitas" class="card-img">
                     <div class="card-content">
                         <h3>Thamy Freitas</h3>
                         <p>Conteúdos exclusivos atualizados semanalmente.</p>
@@ -564,11 +499,11 @@
             <h2 class="section-title">Catálogo de Criadoras - Página 2</h2>
             <div class="grid-packs">
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="Criadora 3" class="card-img" onclick="abrirVisualizador(this.src)">
+                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="Criadora 3" class="card-img">
                     <div class="card-content">
                         <h3>Outra Criadora</h3>
                         <p>Pasta de conteúdos da página 2.</p>
-                        <button class="btn" onclick="abrirVisualizador('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80')">Ver Mídia</button>
+                        <button class="btn" onclick="alert('Pack em breve!')">Ver Pack</button>
                     </div>
                 </div>
             </div>
@@ -600,36 +535,42 @@
             </div>
         </div>
 
-        <!-- ================= PASTA ANE FREITAS (COM CONTEÚDO 1 UNIFICADO) ================= -->
+        <!-- ================= PASTA ANE FREITAS (PACKS FECHADOS COM PREÇO E MERCADO PAGO) ================= -->
         <div id="view-ane" class="page-view">
             <h2 class="section-title">Pasta Oficial: Ane Freitas</h2>
             
-            <!-- PASTA / PACK: CONTEÚDO 1 (As três fotos reunidas aqui dentro) -->
-            <div class="pack-container">
-                <div class="pack-header">
-                    <span class="pack-title">📁 Conteúdo 1</span>
-                    <span class="pack-price">Grátis (Modo Teste)</span>
-                </div>
-                <div class="pack-grid">
-                    <!-- Foto 1 -->
-                    <div class="thumb-card" onclick="abrirVisualizador('https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK')">
-                        <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Foto 1" class="thumb-img">
-                        <div class="thumb-footer">Clique para ampliar</div>
-                    </div>
-                    <!-- Foto 2 -->
-                    <div class="thumb-card" onclick="abrirVisualizador('https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi')">
-                        <img src="https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi" alt="Foto 2" class="thumb-img">
-                        <div class="thumb-footer">Clique para ampliar</div>
-                    </div>
-                    <!-- Foto 3 -->
-                    <div class="thumb-card" onclick="abrirVisualizador('https://lh3.googleusercontent.com/d/1CMtnWzSieeZBODdsi-fpTDqo2g96MRc_')">
-                        <img src="https://lh3.googleusercontent.com/d/1CMtnWzSieeZBODdsi-fpTDqo2g96MRc_" alt="Foto 3" class="thumb-img">
-                        <div class="thumb-footer">Clique para ampliar</div>
+            <div class="grid-packs">
+                <!-- Pack: Conteúdo 1 (Miniatura fechada com valor e link do Mercado Pago) -->
+                <div class="card">
+                    <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Conteúdo 1" class="card-img">
+                    <div class="card-content">
+                        <h3>Conteúdo 1</h3>
+                        <p>Pasta exclusiva contendo o grupo completo de fotos e vídeos da criadora.</p>
+                        <div class="price">R$ 1,00 <span style="font-size:0.8rem; color:#888;">(Teste)</span></div>
+                        <!-- Botão de pagamento do Mercado Pago -->
+                        <a href="LINK_DE_PAGAMENTO_MERCADO_PAGO_AQUI" class="btn btn-mercado-pago" target="_blank" style="margin-bottom: 0.5rem;">Comprar via Mercado Pago</a>
+                        <!-- Botão para simular a visualização após teste -->
+                        <button class="btn" onclick="abrirGaleriaAne()">Ver Conteúdo (Teste)</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Caso queira adicionar um Conteúdo 2 no futuro, basta copiar o bloco acima e mudar para Conteúdo 2 -->
+            <!-- Galeria oculta que só abre quando o cliente confirma/libera o acesso -->
+            <div id="galeria-ane-liberada" style="display: none; margin-top: 3rem;">
+                <h3 class="section-title" style="font-size: 1.4rem;">Mídias Liberadas - Conteúdo 1</h3>
+                <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Clique em qualquer miniatura abaixo para ampliar em tela cheia:</p>
+                <div class="grid-packs" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                    <div class="card">
+                        <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Foto 1" class="card-img" onclick="abrirVisualizador(this.src)" style="height: 180px; cursor: pointer;">
+                    </div>
+                    <div class="card">
+                        <img src="https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi" alt="Foto 2" class="card-img" onclick="abrirVisualizador(this.src)" style="height: 180px; cursor: pointer;">
+                    </div>
+                    <div class="card">
+                        <img src="https://lh3.googleusercontent.com/d/1CMtnWzSieeZBODdsi-fpTDqo2g96MRc_" alt="Foto 3" class="card-img" onclick="abrirVisualizador(this.src)" style="height: 180px; cursor: pointer;">
+                    </div>
+                </div>
+            </div>
 
             <div class="pagination">
                 <button class="page-btn" onclick="mudarPagina('inicio')">« Voltar para Início</button>
@@ -640,15 +581,14 @@
         <div id="view-thamy" class="page-view">
             <h2 class="section-title">Pasta Oficial: Thamy Freitas</h2>
             
-            <div class="pack-container">
-                <div class="pack-header">
-                    <span class="pack-title">📁 Conteúdo 1</span>
-                    <span class="pack-price">R$ 1,00 (Teste)</span>
-                </div>
-                <div class="pack-grid">
-                    <div class="thumb-card" onclick="abrirVisualizador('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80')">
-                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Thamy" class="thumb-img">
-                        <div class="thumb-footer">Clique para ampliar</div>
+            <div class="grid-packs">
+                <div class="card">
+                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Conteúdo 1" class="card-img">
+                    <div class="card-content">
+                        <h3>Conteúdo 1</h3>
+                        <p>Pasta dedicada com conteúdos inéditos e atualizações periódicas da criadora.</p>
+                        <div class="price">R$ 1,00 <span style="font-size:0.8rem; color:#888;">(Teste)</span></div>
+                        <a href="LINK_DE_PAGAMENTO_MERCADO_PAGO_AQUI" class="btn btn-mercado-pago" target="_blank">Comprar via Mercado Pago</a>
                     </div>
                 </div>
             </div>
@@ -723,6 +663,13 @@
                 target.classList.add('active');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
+        }
+
+        // Função temporária de teste para revelar as fotos da Ane Freitas ao clicar no botão de teste
+        function abrirGaleriaAne() {
+            const galeria = document.getElementById('galeria-ane-liberada');
+            galeria.style.display = 'block';
+            galeria.scrollIntoView({ behavior: 'smooth' });
         }
     </script>
 </body>
