@@ -97,44 +97,7 @@
             opacity: 0.85;
         }
 
-        /* Barra de Navegação Horizontal (Deitada) */
-        nav {
-            background-color: #1a1a1a;
-            border-bottom: 2px solid var(--secondary-color);
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1rem;
-        }
-
-        .nav-brand {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            flex-wrap: wrap;
-        }
-
-        .nav-links a {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.2s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        /* Cabeçalho e Explicação do Site */
+        /* Banner Principal no Topo */
         header {
             background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
             padding: 3rem 1rem;
@@ -142,7 +105,7 @@
         }
 
         header h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             margin-bottom: 0.5rem;
         }
 
@@ -153,10 +116,95 @@
             margin: 0 auto;
         }
 
+        /* Barra de Botões Horizontal Logo Abaixo do Banner */
+        .nav-bar {
+            background-color: #1a1a1a;
+            border-bottom: 2px solid var(--secondary-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            z-index: 100;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            width: 100%;
+            max-width: 1200px;
+            justify-content: space-around;
+        }
+
+        .nav-item {
+            position: relative;
+            flex: 1;
+            text-align: center;
+        }
+
+        .nav-link {
+            display: block;
+            padding: 1rem;
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            background-color: transparent;
+            border: none;
+            width: 100%;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .nav-link:hover {
+            background-color: rgba(216, 27, 96, 0.15);
+            color: var(--primary-color);
+        }
+
+        /* Coluna Vertical (Dropdown de Criadoras de A-Z) */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #1e1e1e;
+            min-width: 220px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.6);
+            border-radius: 0 0 8px 8px;
+            border: 1px solid var(--secondary-color);
+            list-style: none;
+            text-align: left;
+            z-index: 1000;
+        }
+
+        .nav-item.dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu li a {
+            display: block;
+            padding: 0.75rem 1.2rem;
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #2a2a2a;
+            transition: background 0.2s;
+        }
+
+        .dropdown-menu li a:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .dropdown-menu li:last-child a {
+            border-bottom: none;
+        }
+
+        /* Container Principal */
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
             flex: 1;
             width: 100%;
         }
@@ -168,7 +216,7 @@
             padding-left: 0.75rem;
         }
 
-        /* Grade de Criadoras / Pastas */
+        /* Grade de Cards */
         .grid-packs {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -240,7 +288,7 @@
             background-color: var(--secondary-color);
         }
 
-        /* Seção de Parceiros e Informações */
+        /* Blocos Informativos */
         .info-section {
             background-color: var(--card-bg);
             padding: 2rem;
@@ -282,47 +330,60 @@
         </div>
     </div>
 
-    <!-- Barra de Navegação Horizontal (Deitada) -->
-    <nav>
-        <a href="#" class="nav-brand">Agência Book Rosa</a>
-        <ul class="nav-links">
-            <li><a href="#criadoras">Criadoras</a></li>
-            <li><a href="#parceiros">Parceiros</a></li>
-            <li><a href="#intuito">Intuito do Site</a></li>
-            <li><a href="#diretrizes">Diretrizes</a></li>
-        </ul>
-    </nav>
-
-    <!-- Cabeçalho com Apresentação -->
+    <!-- Banner Principal no Topo -->
     <header>
         <h1>Agência Book Rosa</h1>
         <p>Catálogo aberto de conteúdos exclusivos. Navegue pelas pastas independentes de diversas criadoras e confira os materiais disponíveis.</p>
     </header>
+
+    <!-- Barra de Navegação Horizontal com Botões -->
+    <nav class="nav-bar">
+        <ul class="nav-list">
+            <!-- Dropdown de Criadoras (Coluna Vertical de A-Z) -->
+            <li class="nav-item dropdown">
+                <a href="#criadoras" class="nav-link">Criadoras ▼</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#ane-freitas">Ane Freitas</a></li>
+                    <li><a href="#thamy-freitas">Thamy Freitas</a></li>
+                    <li><a href="#criadora-b">Outra Criadora B</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#parceiros" class="nav-link">Parceiros</a>
+            </li>
+            <li class="nav-item">
+                <a href="#intuito" class="nav-link">Intuito do Site</a>
+            </li>
+            <li class="nav-item">
+                <a href="#diretrizes" class="nav-link">Diretrizes</a>
+            </li>
+        </ul>
+    </nav>
 
     <div class="container">
         
         <!-- Seção de Criadoras (Pastas) -->
         <h2 id="criadoras" class="section-title">Pastas das Criadoras</h2>
         <div class="grid-packs">
-            <!-- Pasta Thamy Freitas -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Thamy Freitas" class="card-img">
+            <!-- Pasta Ane Freitas / Thamy Freitas com Pack de R$ 1,00 -->
+            <div class="card" id="ane-freitas">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Ane Freitas" class="card-img">
                 <div class="card-content">
-                    <h3>Thamy Freitas</h3>
+                    <h3>Ane Freitas</h3>
                     <p>Pasta oficial com ensaio exclusivo e vídeos em alta definição. Conteúdo liberado após confirmação.</p>
-                    <div class="price">R$ 1,00 <span style="font-size:0.8rem; color:#888;">(Teste)</span></div>
-                    <a href="LINK_PAGAMENTO_THAMY" class="btn" target="_blank">Comprar Pack</a>
+                    <div class="price">R$ 1,00 <span style="font-size:0.8rem; color:#888;">(Pack de Teste)</span></div>
+                    <a href="LINK_DO_TELEGRAM_AQUI" class="btn" target="_blank">Comprar Pack</a>
                 </div>
             </div>
 
-            <!-- Outras Criadoras (Espaço para futuras adições) -->
-            <div class="card">
-                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Outra Criadora" class="card-img">
+            <!-- Outras Criadoras -->
+            <div class="card" id="thamy-freitas">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Thamy Freitas" class="card-img">
                 <div class="card-content">
-                    <h3>Outra Criadora</h3>
-                    <p>Pasta dedicada com conteúdos inéditos e atualizações periódicas.</p>
-                    <div class="price">R$ 1,00 <span style="font-size:0.8rem; color:#888;">(Teste)</span></div>
-                    <a href="LINK_PAGAMENTO_OUTRA" class="btn" target="_blank">Comprar Pack</a>
+                    <h3>Thamy Freitas</h3>
+                    <p>Pasta dedicada com conteúdos inéditos e atualizações periódicas da criadora.</p>
+                    <div class="price">R$ 1,00 <span style="font-size:0.8rem; color:#888;">(Pack de Teste)</span></div>
+                    <a href="LINK_DO_TELEGRAM_AQUI" class="btn" target="_blank">Comprar Pack</a>
                 </div>
             </div>
         </div>
