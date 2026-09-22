@@ -264,67 +264,98 @@
             padding-left: 0.75rem;
         }
 
-        /* Grade Estilo Ficheiro / Vários Packs Lado a Lado */
+        /* Estilo Ficheiro / Pasta Estilo Computador */
         .grid-packs {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.8rem;
             margin-bottom: 2rem;
         }
 
-        .card {
-            background-color: var(--card-bg);
+        .computer-folder {
+            background-color: #1a1a1a;
+            border: 2px solid #333;
             border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+            padding: 1rem;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+            transition: transform 0.2s, border-color 0.2s;
             display: flex;
             flex-direction: column;
-            border: 1px solid #333;
-            transition: transform 0.2s ease, border-color 0.2s ease;
         }
 
-        .card:hover {
+        .computer-folder:hover {
             transform: translateY(-4px);
             border-color: var(--primary-color);
         }
 
-        .card-img {
+        /* Ícone de Pasta Estilo Computador com Prévia em Miniatura */
+        .folder-icon-box {
+            background-color: #262626;
+            border: 1px solid #444;
+            border-radius: 8px;
+            padding: 10px;
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        .folder-tab {
+            width: 90px;
+            height: 12px;
+            background-color: #e0a800; /* Cor amarelada clássica de pasta */
+            border-radius: 4px 4px 0 0;
+            margin-bottom: -2px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .folder-body {
+            background-color: #f5c518; /* Pasta estilo Windows */
+            border-radius: 0 6px 6px 6px;
+            padding: 10px;
+            box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+        }
+
+        /* Grade interna de pequenas miniaturas simulando o conteúdo da pasta */
+        .folder-preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            background: #111;
+            padding: 6px;
+            border-radius: 4px;
+        }
+
+        .folder-preview-thumb {
             width: 100%;
-            height: 140px;
+            height: 55px;
             object-fit: cover;
+            border-radius: 3px;
+            border: 1px solid #333;
         }
 
-        .card-content {
-            padding: 1.2rem;
-            display: flex;
-            flex-direction: column;
-            flex: 1;
+        .folder-info h3 {
+            font-size: 1.25rem;
+            color: var(--text-color);
+            margin-bottom: 0.3rem;
         }
 
-        .card-content h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.4rem;
-            color: var(--primary-color);
-        }
-
-        .card-content p {
+        .folder-info p {
             font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: 1rem;
-            flex: 1;
         }
 
-        .price {
+        .folder-price {
             font-size: 1.1rem;
             font-weight: bold;
-            margin-bottom: 0.8rem;
             color: #4caf50;
+            margin-bottom: 0.8rem;
         }
 
         .btn {
             display: block;
             width: 100%;
-            padding: 0.6rem;
+            padding: 0.65rem;
             background-color: var(--primary-color);
             color: white;
             text-align: center;
@@ -335,19 +366,11 @@
             cursor: pointer;
             border: none;
             font-size: 0.9rem;
-            margin-bottom: 0.4rem;
+            margin-top: 0.4rem;
         }
 
         .btn:hover {
             background-color: var(--secondary-color);
-        }
-
-        .btn-mercado-pago {
-            background-color: #009ee3;
-        }
-
-        .btn-mercado-pago:hover {
-            background-color: #0073a8;
         }
 
         /* Barra de Paginação Numérica */
@@ -469,17 +492,28 @@
 
             <h3 class="section-title" style="font-size: 1.4rem; margin-top: 2rem;">Minicapas das Principais Criadoras</h3>
             <div class="grid-packs" style="margin-bottom: 2rem;">
-                <div class="card">
-                    <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Ane Freitas" class="card-img">
-                    <div class="card-content">
+                <div class="computer-folder">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body">
+                        <div class="folder-preview-grid">
+                            <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" class="folder-preview-thumb">
+                        </div>
+                    </div>
+                    <div class="folder-info" style="margin-top: 1rem;">
                         <h3>Ane Freitas</h3>
                         <p>Acesse o perfil e confira os packs exclusivos.</p>
                         <button class="btn" onclick="mudarPagina('ane')">Ver Pasta</button>
                     </div>
                 </div>
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Thamy Freitas" class="card-img">
-                    <div class="card-content">
+
+                <div class="computer-folder">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body">
+                        <div class="folder-preview-grid">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" class="folder-preview-thumb">
+                        </div>
+                    </div>
+                    <div class="folder-info" style="margin-top: 1rem;">
                         <h3>Thamy Freitas</h3>
                         <p>Conteúdos exclusivos atualizados semanalmente.</p>
                         <button class="btn" onclick="mudarPagina('thamy')">Ver Pasta</button>
@@ -501,12 +535,17 @@
         <div id="view-pagina2" class="page-view">
             <h2 class="section-title">Catálogo de Criadoras - Página 2</h2>
             <div class="grid-packs">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" alt="Criadora 3" class="card-img">
-                    <div class="card-content">
+                <div class="computer-folder">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body">
+                        <div class="folder-preview-grid">
+                            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" class="folder-preview-thumb">
+                        </div>
+                    </div>
+                    <div class="folder-info" style="margin-top: 1rem;">
                         <h3>Outra Criadora</h3>
                         <p>Pasta de conteúdos da página 2.</p>
-                        <button class="btn" onclick="alert('Pack em breve!')">Ver Pack</button>
+                        <button class="btn" onclick="alert('Pack em breve!')">Ver Pasta</button>
                     </div>
                 </div>
             </div>
@@ -538,55 +577,65 @@
             </div>
         </div>
 
-        <!-- ================= PASTA ANE FREITAS (VÁRIOS PACKS COMPACTOS LADO A LADO) ================= -->
+        <!-- ================= PASTA ANE FREITAS (PASTAS ESTILO COMPUTADOR COM PRÉVIAS) ================= -->
         <div id="view-ane" class="page-view">
             <h2 class="section-title">Pasta Oficial: Ane Freitas</h2>
             
-            <!-- Grade de Packs Compactos (Ficheiro / Vários Packs) -->
             <div class="grid-packs">
                 
-                <!-- Pack 1 -->
-                <div class="card">
-                    <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Conteúdo 1" class="card-img">
-                    <div class="card-content">
+                <!-- Pasta / Pack: Conteúdo 1 -->
+                <div class="computer-folder">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body">
+                        <div class="folder-preview-grid">
+                            <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" class="folder-preview-thumb">
+                            <img src="https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi" class="folder-preview-thumb">
+                            <img src="https://lh3.googleusercontent.com/d/1CMtnWzSieeZBODdsi-fpTDqo2g96MRc_" class="folder-preview-thumb">
+                        </div>
+                    </div>
+                    <div class="folder-info" style="margin-top: 1rem;">
                         <h3>Conteúdo 1</h3>
-                        <p>Pack completo com fotos e vídeos exclusivos.</p>
-                        <div class="price">R$ 1,00 <span style="font-size:0.75rem; color:#888;">(Teste)</span></div>
-                        <a href="LINK_DE_PAGAMENTO_MERCADO_PAGO_AQUI" class="btn btn-mercado-pago" target="_blank">Comprar via Mercado Pago</a>
-                        <button class="btn" onclick="abrirGaleriaAne()">Ver Conteúdo (Teste)</button>
+                        <p>Pasta completa com fotos e vídeos exclusivos.</p>
+                        <div class="folder-price">R$ 1,00</div>
+                        <!-- Botão de teste exclusivo para você visualizar o conteúdo -->
+                        <button class="btn" style="background-color: #880e4f;" onclick="abrirGaleriaAne()">Visualizar Conteúdo (Teste)</button>
                     </div>
                 </div>
 
-                <!-- Pack 2 (Exemplo de segundo pack para preencher a grade) -->
-                <div class="card">
-                    <img src="https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi" alt="Conteúdo 2" class="card-img">
-                    <div class="card-content">
+                <!-- Pasta / Pack: Conteúdo 2 (Exemplo de nova pasta) -->
+                <div class="computer-folder">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body">
+                        <div class="folder-preview-grid">
+                            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" class="folder-preview-thumb">
+                        </div>
+                    </div>
+                    <div class="folder-info" style="margin-top: 1rem;">
                         <h3>Conteúdo 2</h3>
                         <p>Novo ensaio especial liberado.</p>
-                        <div class="price">R$ 1,00 <span style="font-size:0.75rem; color:#888;">(Teste)</span></div>
-                        <a href="LINK_DE_PAGAMENTO_MERCADO_PAGO_AQUI" class="btn btn-mercado-pago" target="_blank">Comprar via Mercado Pago</a>
-                        <button class="btn" onclick="alert('Pack 2 em breve!')">Ver Conteúdo</button>
+                        <div class="folder-price">R$ 1,00</div>
+                        <button class="btn" style="background-color: #555;" onclick="alert('Pasta vazia ou aguardando liberação.')">Pasta Fechada</button>
                     </div>
                 </div>
 
             </div>
 
-            <!-- Galeria oculta que só abre quando o cliente clica para ver o conteúdo liberado -->
+            <!-- Galeria oculta de teste para você conferir as fotos -->
             <div id="galeria-ane-liberada" style="display: none; margin-top: 3rem; border-top: 1px solid #333; padding-top: 2rem;">
-                <h3 class="section-title" style="font-size: 1.4rem;">Mídias Liberadas - Conteúdo 1</h3>
+                <h3 class="section-title" style="font-size: 1.4rem;">Mídias Internas - Conteúdo 1</h3>
                 <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Clique em qualquer miniatura abaixo para ampliar em tela cheia:</p>
                 <div class="grid-packs" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
-                    <div class="card">
-                        <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Foto 1" class="card-img" onclick="abrirVisualizador(this.src)" style="height: 160px; cursor: pointer;">
-                        <div style="padding: 0.5rem; text-align: center; font-size: 0.8rem; color: #aaa;">Mídia 1</div>
+                    <div style="background: #1e1e1e; padding: 10px; border-radius: 8px; text-align: center;">
+                        <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" class="folder-preview-thumb" style="height: 140px; cursor: pointer;" onclick="abrirVisualizador(this.src)">
+                        <div style="font-size: 0.85rem; color: #aaa; margin-top: 8px;">Mídia 1</div>
                     </div>
-                    <div class="card">
-                        <img src="https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi" alt="Foto 2" class="card-img" onclick="abrirVisualizador(this.src)" style="height: 160px; cursor: pointer;">
-                        <div style="padding: 0.5rem; text-align: center; font-size: 0.8rem; color: #aaa;">Mídia 2</div>
+                    <div style="background: #1e1e1e; padding: 10px; border-radius: 8px; text-align: center;">
+                        <img src="https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi" class="folder-preview-thumb" style="height: 140px; cursor: pointer;" onclick="abrirVisualizador(this.src)">
+                        <div style="font-size: 0.85rem; color: #aaa; margin-top: 8px;">Mídia 2</div>
                     </div>
-                    <div class="card">
-                        <img src="https://lh3.googleusercontent.com/d/1CMtnWzSieeZBODdsi-fpTDqo2g96MRc_" alt="Foto 3" class="card-img" onclick="abrirVisualizador(this.src)" style="height: 160px; cursor: pointer;">
-                        <div style="padding: 0.5rem; text-align: center; font-size: 0.8rem; color: #aaa;">Mídia 3</div>
+                    <div style="background: #1e1e1e; padding: 10px; border-radius: 8px; text-align: center;">
+                        <img src="https://lh3.googleusercontent.com/d/1CMtnWzSieeZBODdsi-fpTDqo2g96MRc_" class="folder-preview-thumb" style="height: 140px; cursor: pointer;" onclick="abrirVisualizador(this.src)">
+                        <div style="font-size: 0.85rem; color: #aaa; margin-top: 8px;">Mídia 3</div>
                     </div>
                 </div>
             </div>
@@ -601,13 +650,18 @@
             <h2 class="section-title">Pasta Oficial: Thamy Freitas</h2>
             
             <div class="grid-packs">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Conteúdo 1" class="card-img">
-                    <div class="card-content">
+                <div class="computer-folder">
+                    <div class="folder-tab"></div>
+                    <div class="folder-body">
+                        <div class="folder-preview-grid">
+                            <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=300&q=80" class="folder-preview-thumb">
+                        </div>
+                    </div>
+                    <div class="folder-info" style="margin-top: 1rem;">
                         <h3>Conteúdo 1</h3>
                         <p>Pasta dedicada com conteúdos inéditos.</p>
-                        <div class="price">R$ 1,00 <span style="font-size:0.75rem; color:#888;">(Teste)</span></div>
-                        <a href="LINK_DE_PAGAMENTO_MERCADO_PAGO_AQUI" class="btn btn-mercado-pago" target="_blank">Comprar via Mercado Pago</a>
+                        <div class="folder-price">R$ 1,00</div>
+                        <button class="btn" style="background-color: #555;">Pasta Fechada</button>
                     </div>
                 </div>
             </div>
