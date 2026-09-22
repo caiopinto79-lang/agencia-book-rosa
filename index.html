@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agência Book Rosa - Packs Exclusivos</title>
+    <title>Agência Book Rosa - Conteúdo Exclusivo</title>
     <style>
         :root {
             --primary-color: #d81b60;
@@ -29,20 +29,128 @@
             min-height: 100vh;
         }
 
+        /* Modal de Maioridade +18 */
+        #age-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            padding: 1rem;
+        }
+
+        .modal-content {
+            background-color: var(--card-bg);
+            padding: 2.5rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+            border: 1px solid var(--secondary-color);
+        }
+
+        .modal-content h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.8rem;
+        }
+
+        .modal-content p {
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .modal-btns {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .modal-btn {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: opacity 0.2s;
+        }
+
+        .btn-yes {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-no {
+            background-color: #333;
+            color: #aaa;
+        }
+
+        .modal-btn:hover {
+            opacity: 0.85;
+        }
+
+        /* Barra de Navegação Horizontal (Deitada) */
+        nav {
+            background-color: #1a1a1a;
+            border-bottom: 2px solid var(--secondary-color);
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1.5rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* Cabeçalho e Explicação do Site */
         header {
             background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-            padding: 2rem 1rem;
+            padding: 3rem 1rem;
             text-align: center;
         }
 
         header h1 {
-            font-size: 2.2rem;
+            font-size: 2.5rem;
             margin-bottom: 0.5rem;
         }
 
         header p {
-            font-size: 1rem;
+            font-size: 1.1rem;
             color: #fce4ec;
+            max-width: 700px;
+            margin: 0 auto;
         }
 
         .container {
@@ -53,10 +161,19 @@
             width: 100%;
         }
 
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            border-left: 5px solid var(--primary-color);
+            padding-left: 0.75rem;
+        }
+
+        /* Grade de Criadoras / Pastas */
         .grid-packs {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
+            margin-bottom: 3rem;
         }
 
         .card {
@@ -103,6 +220,7 @@
             font-size: 1.25rem;
             font-weight: bold;
             margin-bottom: 1rem;
+            color: #4caf50;
         }
 
         .btn {
@@ -122,44 +240,124 @@
             background-color: var(--secondary-color);
         }
 
+        /* Seção de Parceiros e Informações */
+        .info-section {
+            background-color: var(--card-bg);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+        }
+
+        .info-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .info-section p {
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
         footer {
             text-align: center;
             padding: 1.5rem;
             background-color: #0a0a0a;
             color: var(--text-muted);
             font-size: 0.9rem;
+            border-top: 1px solid #222;
         }
     </style>
 </head>
 <body>
 
+    <!-- Modal de Restrição de Idade (+18) -->
+    <div id="age-modal">
+        <div class="modal-content">
+            <h2>Conteúdo Adulto (+18)</h2>
+            <p>Este site contém material restrito para maiores de 18 anos. Você confirma que tem idade legal para acessar?</p>
+            <div class="modal-btns">
+                <button class="modal-btn btn-no" onclick="alert('Acesso negado.');">Não</button>
+                <button class="modal-btn btn-yes" onclick="fecharModal()">Sim, tenho 18+</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra de Navegação Horizontal (Deitada) -->
+    <nav>
+        <a href="#" class="nav-brand">Agência Book Rosa</a>
+        <ul class="nav-links">
+            <li><a href="#criadoras">Criadoras</a></li>
+            <li><a href="#parceiros">Parceiros</a></li>
+            <li><a href="#intuito">Intuito do Site</a></li>
+            <li><a href="#diretrizes">Diretrizes</a></li>
+        </ul>
+    </nav>
+
+    <!-- Cabeçalho com Apresentação -->
     <header>
         <h1>Agência Book Rosa</h1>
-        <p>Conteúdos exclusivos liberados por 30 dias após a confirmação do pagamento.</p>
+        <p>Catálogo aberto de conteúdos exclusivos. Navegue pelas pastas independentes de diversas criadoras e confira os materiais disponíveis.</p>
     </header>
 
     <div class="container">
+        
+        <!-- Seção de Criadoras (Pastas) -->
+        <h2 id="criadoras" class="section-title">Pastas das Criadoras</h2>
         <div class="grid-packs">
-            <!-- Pack UniFreitas -->
+            <!-- Pasta Thamy Freitas -->
             <div class="card">
-                <!-- Aqui você pode usar uma imagem de capa oficial do pack ou o link de uma das fotos do Telegram -->
-                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Pack UniFreitas" class="card-img">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Thamy Freitas" class="card-img">
                 <div class="card-content">
-                    <h3>Pack UniFreitas</h3>
-                    <p>Sessão exclusiva com fotos e vídeos inéditos em alta definição. Acesso liberado por 30 dias na plataforma.</p>
-                    <div class="price">R$ 49,90</div>
-                    <!-- Substitua o link abaixo pelo link do seu checkout/pagamento -->
-                    <a href="LINK_DE_PAGAMENTO_UNIFREITAS" class="btn" target="_blank">Comprar Agora</a>
+                    <h3>Thamy Freitas</h3>
+                    <p>Pasta oficial com ensaio exclusivo e vídeos em alta definição. Conteúdo liberado após confirmação.</p>
+                    <div class="price">R$ 1,00 <span style="font-size:0.8rem; color:#888;">(Teste)</span></div>
+                    <a href="LINK_PAGAMENTO_THAMY" class="btn" target="_blank">Comprar Pack</a>
                 </div>
             </div>
 
-            <!-- Você poderá adicionar mais packs aqui no futuro seguindo a mesma estrutura -->
+            <!-- Outras Criadoras (Espaço para futuras adições) -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Outra Criadora" class="card-img">
+                <div class="card-content">
+                    <h3>Outra Criadora</h3>
+                    <p>Pasta dedicada com conteúdos inéditos e atualizações periódicas.</p>
+                    <div class="price">R$ 1,00 <span style="font-size:0.8rem; color:#888;">(Teste)</span></div>
+                    <a href="LINK_PAGAMENTO_OUTRA" class="btn" target="_blank">Comprar Pack</a>
+                </div>
+            </div>
         </div>
+
+        <!-- Seção de Parceiros -->
+        <h2 id="parceiros" class="section-title">Parceiros e Divulgações</h2>
+        <div class="info-section">
+            <h3>Empresas e Sites Parceiros</h3>
+            <p>Espaço reservado para marcas parceiras, anúncios e plataformas indicadas pela agência. (Área aberta para futuras parcerias comerciais).</p>
+        </div>
+
+        <!-- Intuito do Site -->
+        <h2 id="intuito" class="section-title">O Intuito do Site</h2>
+        <div class="info-section">
+            <h3>Nossa Proposta</h3>
+            <p>O objetivo da Agência Book Rosa é centralizar e organizar o acesso a materiais digitais de diferentes criadoras de forma prática. Cada pessoa possui sua própria pasta e catálogo independente, facilitando a escolha e garantindo total agilidade na entrega via nuvem.</p>
+        </div>
+
+        <!-- Diretrizes -->
+        <h2 id="diretrizes" class="section-title">Diretrizes e Termos</h2>
+        <div class="info-section">
+            <h3>Regras de Uso</h3>
+            <p>Todos os direitos reservados. É proibida a redistribuição ou vazamento de qualquer material disponibilizado nas pastas sob pena de medidas legais. O acesso aos packs é pessoal e válido pelo período contratado.</p>
+        </div>
+
     </div>
 
     <footer>
         <p>&copy; 2026 Agência Book Rosa. Todos os direitos reservados.</p>
     </footer>
 
+    <script>
+        function fecharModal() {
+            document.getElementById('age-modal').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
