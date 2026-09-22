@@ -97,7 +97,7 @@
             opacity: 0.85;
         }
 
-        /* Visualizador de Imagem Ampliada Direto no Site */
+        /* Visualizador de Imagem em Tela Cheia (Direto no Site) */
         #image-viewer {
             position: fixed;
             top: 0;
@@ -454,7 +454,7 @@
 
     <div class="container">
         
-        <!-- ================= PÁGINA INICIAL (Página 1) ================= -->
+        <!-- ================= PÁGINA INICIAL ================= -->
         <div id="view-inicio" class="page-view active">
             <h2 class="section-title">Bem-vindo à Vitrine Principal</h2>
             <div class="info-section">
@@ -465,7 +465,7 @@
             <h3 class="section-title" style="font-size: 1.4rem; margin-top: 2rem;">Minicapas das Principais Criadoras</h3>
             <div class="grid-packs" style="margin-bottom: 2rem;">
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Ane Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
+                    <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Ane Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
                     <div class="card-content">
                         <h3>Ane Freitas</h3>
                         <p>Acesse o perfil e confira as novidades em alta definição.</p>
@@ -482,7 +482,6 @@
                 </div>
             </div>
 
-            <!-- Paginação Geral -->
             <div class="pagination">
                 <button class="page-btn" onclick="mudarPagina('inicio')">« Início</button>
                 <button class="page-btn" onclick="mudarPagina('inicio')">‹ Voltar</button>
@@ -535,52 +534,30 @@
             </div>
         </div>
 
-        <!-- ================= PASTA ANE FREITAS (CONTEÚDOS DIRETO NO SITE) ================= -->
+        <!-- ================= PASTA ANE FREITAS (COM AS SUAS FOTOS REAIS DO DRIVE) ================= -->
         <div id="view-ane" class="page-view">
             <h2 class="section-title">Pasta Exclusiva: Ane Freitas</h2>
             <div class="grid-packs">
                 
-                <!-- Pack 1 -->
+                <!-- Foto 1 da Ane Freitas -->
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Pack 1 - Ane Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
+                    <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Pack 1 - Ane Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
                     <div class="card-content">
                         <h3>Pack 1 - Sessão Exclusiva</h3>
-                        <p>Conteúdo exclusivo liberado para visualização imediata no site.</p>
+                        <p>Conteúdo real da criadora carregado diretamente do armazenamento.</p>
                         <div class="price">Grátis <span style="font-size:0.8rem; color:#888;">(Liberado)</span></div>
-                        <button class="btn" onclick="abrirVisualizador('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=1200&q=80')">Abrir Mídia</button>
+                        <button class="btn" onclick="abrirVisualizador('https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK')">Abrir Mídia</button>
                     </div>
                 </div>
 
-                <!-- Pack 2 -->
+                <!-- Foto 2 da Ane Freitas -->
                 <div class="card">
-                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=600&q=80" alt="Pack 2 - Ane Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
+                    <img src="https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi" alt="Pack 2 - Ane Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
                     <div class="card-content">
                         <h3>Pack 2 - Ensaio Especial</h3>
                         <p>Mídias em alta definição direto na sua tela.</p>
                         <div class="price">Grátis <span style="font-size:0.8rem; color:#888;">(Liberado)</span></div>
-                        <button class="btn" onclick="abrirVisualizador('https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=1200&q=80')">Abrir Mídia</button>
-                    </div>
-                </div>
-
-                <!-- Pack 3 -->
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80" alt="Pack 3 - Ane Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
-                    <div class="card-content">
-                        <h3>Pack 3 - Bastidores</h3>
-                        <p>Material inédito atualizado na pasta exclusiva.</p>
-                        <div class="price">Grátis <span style="font-size:0.8rem; color:#888;">(Liberado)</span></div>
-                        <button class="btn" onclick="abrirVisualizador('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80')">Abrir Mídia</button>
-                    </div>
-                </div>
-
-                <!-- Pack 4 -->
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Pack 4 - Ane Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
-                    <div class="card-content">
-                        <h3>Pack 4 - Coleção VIP</h3>
-                        <p>Acesso completo aos arquivos selecionados.</p>
-                        <div class="price">Grátis <span style="font-size:0.8rem; color:#888;">(Liberado)</span></div>
-                        <button class="btn" onclick="abrirVisualizador('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=1200&q=80')">Abrir Mídia</button>
+                        <button class="btn" onclick="abrirVisualizador('https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi')">Abrir Mídia</button>
                     </div>
                 </div>
 
@@ -666,7 +643,6 @@
             document.getElementById('image-viewer').style.display = 'none';
         }
 
-        // Função para alternar páginas dentro do site sem abrir novas abas
         function mudarPagina(idPagina) {
             const views = document.querySelectorAll('.page-view');
             views.forEach(v => v.classList.remove('active'));
