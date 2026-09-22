@@ -264,7 +264,81 @@
             padding-left: 0.75rem;
         }
 
-        /* Grade de Cards */
+        /* Estilo para Container de Pack (Pasta agrupada) */
+        .pack-container {
+            background-color: #181818;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+        }
+
+        .pack-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            border-bottom: 1px solid #2a2a2a;
+            padding-bottom: 0.8rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .pack-title {
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .pack-price {
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: #4caf50;
+            background-color: rgba(76, 175, 80, 0.1);
+            padding: 0.3rem 0.8rem;
+            border-radius: 6px;
+        }
+
+        /* Grade interna de miniaturas dentro do Pack */
+        .pack-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .thumb-card {
+            background-color: var(--card-bg);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: transform 0.2s, border-color 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .thumb-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary-color);
+        }
+
+        .thumb-img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .thumb-footer {
+            padding: 0.75rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            background-color: #222;
+        }
+
+        /* Grade de Cards normais (Início) */
         .grid-packs {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -316,13 +390,6 @@
             color: var(--text-muted);
             margin-bottom: 1.5rem;
             flex: 1;
-        }
-
-        .price {
-            font-size: 1.25rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-            color: #4caf50;
         }
 
         .btn {
@@ -468,7 +535,7 @@
                     <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Ane Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
                     <div class="card-content">
                         <h3>Ane Freitas</h3>
-                        <p>Acesse o perfil e confira as novidades em alta definição.</p>
+                        <p>Acesse o perfil e confira os packs exclusivos em alta definição.</p>
                         <button class="btn" onclick="mudarPagina('ane')">Ver Pasta</button>
                     </div>
                 </div>
@@ -501,7 +568,6 @@
                     <div class="card-content">
                         <h3>Outra Criadora</h3>
                         <p>Pasta de conteúdos da página 2.</p>
-                        <div class="price">R$ 1,00</div>
                         <button class="btn" onclick="abrirVisualizador('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1200&q=80')">Ver Mídia</button>
                     </div>
                 </div>
@@ -534,33 +600,43 @@
             </div>
         </div>
 
-        <!-- ================= PASTA ANE FREITAS (COM AS SUAS FOTOS REAIS DO DRIVE) ================= -->
+        <!-- ================= PASTA ANE FREITAS (ORGANIZADA POR PACKS/PASTAS) ================= -->
         <div id="view-ane" class="page-view">
-            <h2 class="section-title">Pasta Exclusiva: Ane Freitas</h2>
-            <div class="grid-packs">
-                
-                <!-- Foto 1 da Ane Freitas -->
-                <div class="card">
-                    <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Pack 1 - Ane Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
-                    <div class="card-content">
-                        <h3>Pack 1 - Sessão Exclusiva</h3>
-                        <p>Conteúdo real da criadora carregado diretamente do armazenamento.</p>
-                        <div class="price">Grátis <span style="font-size:0.8rem; color:#888;">(Liberado)</span></div>
-                        <button class="btn" onclick="abrirVisualizador('https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK')">Abrir Mídia</button>
+            <h2 class="section-title">Pasta Oficial: Ane Freitas</h2>
+            
+            <!-- PACK 1 (Agrupando as mídias em uma única pasta visual) -->
+            <div class="pack-container">
+                <div class="pack-header">
+                    <span class="pack-title">Pack 1 - Sessão Exclusiva (Fotos e Vídeos)</span>
+                    <span class="pack-price">Grátis (Modo Teste)</span>
+                </div>
+                <div class="pack-grid">
+                    <!-- Mídia 1 do Pack 1 -->
+                    <div class="thumb-card" onclick="abrirVisualizador('https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK')">
+                        <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Mídia 1" class="thumb-img">
+                        <div class="thumb-footer">Clique para ampliar</div>
+                    </div>
+                    <!-- Mídia 2 do Pack 1 -->
+                    <div class="thumb-card" onclick="abrirVisualizador('https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi')">
+                        <img src="https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi" alt="Mídia 2" class="thumb-img">
+                        <div class="thumb-footer">Clique para ampliar</div>
                     </div>
                 </div>
+            </div>
 
-                <!-- Foto 2 da Ane Freitas -->
-                <div class="card">
-                    <img src="https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi" alt="Pack 2 - Ane Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
-                    <div class="card-content">
-                        <h3>Pack 2 - Ensaio Especial</h3>
-                        <p>Mídias em alta definição direto na sua tela.</p>
-                        <div class="price">Grátis <span style="font-size:0.8rem; color:#888;">(Liberado)</span></div>
-                        <button class="btn" onclick="abrirVisualizador('https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi')">Abrir Mídia</button>
+            <!-- PACK 2 (Outra pasta/grupo da mesma criadora) -->
+            <div class="pack-container">
+                <div class="pack-header">
+                    <span class="pack-title">Pack 2 - Bastidores Especiais</span>
+                    <span class="pack-price">Grátis (Modo Teste)</span>
+                </div>
+                <div class="pack-grid">
+                    <!-- Mídia 1 do Pack 2 -->
+                    <div class="thumb-card" onclick="abrirVisualizador('https://lh3.googleusercontent.com/d/1CMtnWzSieeZBODdsi-fpTDqo2g96MRc_')">
+                        <img src="https://lh3.googleusercontent.com/d/1CMtnWzSieeZBODdsi-fpTDqo2g96MRc_" alt="Mídia 1" class="thumb-img">
+                        <div class="thumb-footer">Clique para ampliar</div>
                     </div>
                 </div>
-
             </div>
 
             <div class="pagination">
@@ -570,18 +646,21 @@
 
         <!-- ================= PASTA THAMY FREITAS ================= -->
         <div id="view-thamy" class="page-view">
-            <h2 class="section-title">Pasta Exclusiva: Thamy Freitas</h2>
-            <div class="grid-packs">
-                <div class="card">
-                    <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Pack 1 - Thamy Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
-                    <div class="card-content">
-                        <h3>Pack 1 - Thamy Freitas</h3>
-                        <p>Pasta dedicada com conteúdos inéditos e atualizações periódicas da criadora.</p>
-                        <div class="price">R$ 1,00 <span style="font-size:0.8rem; color:#888;">(Teste)</span></div>
-                        <button class="btn" onclick="abrirVisualizador('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80')">Abrir Mídia</button>
+            <h2 class="section-title">Pasta Oficial: Thamy Freitas</h2>
+            
+            <div class="pack-container">
+                <div class="pack-header">
+                    <span class="pack-title">Pack 1 - Conteúdo Principal</span>
+                    <span class="pack-price">R$ 1,00 (Teste)</span>
+                </div>
+                <div class="pack-grid">
+                    <div class="thumb-card" onclick="abrirVisualizador('https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=1200&q=80')">
+                        <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=600&q=80" alt="Thamy" class="thumb-img">
+                        <div class="thumb-footer">Clique para ampliar</div>
                     </div>
                 </div>
             </div>
+
             <div class="pagination">
                 <button class="page-btn" onclick="mudarPagina('inicio')">« Voltar para Início</button>
             </div>
