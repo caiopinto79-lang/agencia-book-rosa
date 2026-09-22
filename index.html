@@ -221,7 +221,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .card {
@@ -286,6 +286,33 @@
 
         .btn:hover {
             background-color: var(--secondary-color);
+        }
+
+        /* Barra de Paginação Numérica */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 2rem 0 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .page-btn {
+            padding: 0.6rem 1rem;
+            background-color: var(--card-bg);
+            color: var(--text-color);
+            border: 1px solid var(--secondary-color);
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s, color 0.2s;
+        }
+
+        .page-btn:hover, .page-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
         }
 
         /* Blocos Informativos */
@@ -387,6 +414,17 @@
                     <a href="https://t.me/seu_canal_telegram_aqui" class="btn" target="_blank">Acessar Pack</a>
                 </div>
             </div>
+        </div>
+
+        <!-- Barra de Paginação (Início, Voltar, Páginas 1, 2, 3...) -->
+        <div class="pagination">
+            <a href="#" class="page-btn">« Início</a>
+            <a href="#" class="page-btn">‹ Voltar</a>
+            <a href="#" class="page-btn active">1</a>
+            <a href="#" class="page-btn">2</a>
+            <a href="#" class="page-btn">3</a>
+            <a href="#" class="page-btn">4</a>
+            <a href="#" class="page-btn">Avançar ›</a>
         </div>
 
         <!-- Seção de Parceiros -->
