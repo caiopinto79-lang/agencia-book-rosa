@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agência Book Rosa - Packs Exclusivos</title>
+    <style>
+        :root {
+            --primary-color: #d81b60;
+            --secondary-color: #880e4f;
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-color: #ffffff;
+            --text-muted: #b0b0b0;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1rem;
+            color: #fce4ec;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+            flex: 1;
+            width: 100%;
+        }
+
+        .grid-packs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 1.5rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .card-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            color: var(--primary-color);
+        }
+
+        .card-content p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            flex: 1;
+        }
+
+        .price {
+            font-size: 1.25rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 0.75rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: background 0.2s;
+        }
+
+        .btn:hover {
+            background-color: var(--secondary-color);
+        }
+
+        footer {
+            text-align: center;
+            padding: 1.5rem;
+            background-color: #0a0a0a;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Agência Book Rosa</h1>
+        <p>Conteúdos exclusivos liberados por 30 dias após a confirmação do pagamento.</p>
+    </header>
+
+    <div class="container">
+        <div class="grid-packs">
+            <!-- Pack UniFreitas -->
+            <div class="card">
+                <!-- Aqui você pode usar uma imagem de capa oficial do pack ou o link de uma das fotos do Telegram -->
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" alt="Pack UniFreitas" class="card-img">
+                <div class="card-content">
+                    <h3>Pack UniFreitas</h3>
+                    <p>Sessão exclusiva com fotos e vídeos inéditos em alta definição. Acesso liberado por 30 dias na plataforma.</p>
+                    <div class="price">R$ 49,90</div>
+                    <!-- Substitua o link abaixo pelo link do seu checkout/pagamento -->
+                    <a href="LINK_DE_PAGAMENTO_UNIFREITAS" class="btn" target="_blank">Comprar Agora</a>
+                </div>
+            </div>
+
+            <!-- Você poderá adicionar mais packs aqui no futuro seguindo a mesma estrutura -->
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Agência Book Rosa. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
