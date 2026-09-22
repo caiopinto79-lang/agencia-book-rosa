@@ -286,7 +286,7 @@
         }
 
         .pack-title {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             color: var(--primary-color);
             font-weight: bold;
         }
@@ -300,11 +300,11 @@
             border-radius: 6px;
         }
 
-        /* Grade interna de miniaturas dentro do Pack */
+        /* Grade interna de miniaturas dentro do Pack/Pasta */
         .pack-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2rem;
         }
 
         .thumb-card {
@@ -326,7 +326,7 @@
 
         .thumb-img {
             width: 100%;
-            height: 160px;
+            height: 180px;
             object-fit: cover;
         }
 
@@ -535,7 +535,7 @@
                     <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Ane Freitas" class="card-img" onclick="abrirVisualizador(this.src)">
                     <div class="card-content">
                         <h3>Ane Freitas</h3>
-                        <p>Acesse o perfil e confira os packs exclusivos em alta definição.</p>
+                        <p>Acesse o perfil e confira os conteúdos exclusivos.</p>
                         <button class="btn" onclick="mudarPagina('ane')">Ver Pasta</button>
                     </div>
                 </div>
@@ -600,44 +600,36 @@
             </div>
         </div>
 
-        <!-- ================= PASTA ANE FREITAS (ORGANIZADA POR PACKS/PASTAS) ================= -->
+        <!-- ================= PASTA ANE FREITAS (COM CONTEÚDO 1 UNIFICADO) ================= -->
         <div id="view-ane" class="page-view">
             <h2 class="section-title">Pasta Oficial: Ane Freitas</h2>
             
-            <!-- PACK 1 (Agrupando as mídias em uma única pasta visual) -->
+            <!-- PASTA / PACK: CONTEÚDO 1 (As três fotos reunidas aqui dentro) -->
             <div class="pack-container">
                 <div class="pack-header">
-                    <span class="pack-title">Pack 1 - Sessão Exclusiva (Fotos e Vídeos)</span>
+                    <span class="pack-title">📁 Conteúdo 1</span>
                     <span class="pack-price">Grátis (Modo Teste)</span>
                 </div>
                 <div class="pack-grid">
-                    <!-- Mídia 1 do Pack 1 -->
+                    <!-- Foto 1 -->
                     <div class="thumb-card" onclick="abrirVisualizador('https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK')">
-                        <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Mídia 1" class="thumb-img">
+                        <img src="https://lh3.googleusercontent.com/d/1kVNRbQ8vD2MN4ZN3lcXvckHJr4u2nduK" alt="Foto 1" class="thumb-img">
                         <div class="thumb-footer">Clique para ampliar</div>
                     </div>
-                    <!-- Mídia 2 do Pack 1 -->
+                    <!-- Foto 2 -->
                     <div class="thumb-card" onclick="abrirVisualizador('https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi')">
-                        <img src="https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi" alt="Mídia 2" class="thumb-img">
+                        <img src="https://lh3.googleusercontent.com/d/1t8QO0xT_bZVa1J_UOxmMqErPFVaJdRBi" alt="Foto 2" class="thumb-img">
+                        <div class="thumb-footer">Clique para ampliar</div>
+                    </div>
+                    <!-- Foto 3 -->
+                    <div class="thumb-card" onclick="abrirVisualizador('https://lh3.googleusercontent.com/d/1CMtnWzSieeZBODdsi-fpTDqo2g96MRc_')">
+                        <img src="https://lh3.googleusercontent.com/d/1CMtnWzSieeZBODdsi-fpTDqo2g96MRc_" alt="Foto 3" class="thumb-img">
                         <div class="thumb-footer">Clique para ampliar</div>
                     </div>
                 </div>
             </div>
 
-            <!-- PACK 2 (Outra pasta/grupo da mesma criadora) -->
-            <div class="pack-container">
-                <div class="pack-header">
-                    <span class="pack-title">Pack 2 - Bastidores Especiais</span>
-                    <span class="pack-price">Grátis (Modo Teste)</span>
-                </div>
-                <div class="pack-grid">
-                    <!-- Mídia 1 do Pack 2 -->
-                    <div class="thumb-card" onclick="abrirVisualizador('https://lh3.googleusercontent.com/d/1CMtnWzSieeZBODdsi-fpTDqo2g96MRc_')">
-                        <img src="https://lh3.googleusercontent.com/d/1CMtnWzSieeZBODdsi-fpTDqo2g96MRc_" alt="Mídia 1" class="thumb-img">
-                        <div class="thumb-footer">Clique para ampliar</div>
-                    </div>
-                </div>
-            </div>
+            <!-- Caso queira adicionar um Conteúdo 2 no futuro, basta copiar o bloco acima e mudar para Conteúdo 2 -->
 
             <div class="pagination">
                 <button class="page-btn" onclick="mudarPagina('inicio')">« Voltar para Início</button>
@@ -650,7 +642,7 @@
             
             <div class="pack-container">
                 <div class="pack-header">
-                    <span class="pack-title">Pack 1 - Conteúdo Principal</span>
+                    <span class="pack-title">📁 Conteúdo 1</span>
                     <span class="pack-price">R$ 1,00 (Teste)</span>
                 </div>
                 <div class="pack-grid">
